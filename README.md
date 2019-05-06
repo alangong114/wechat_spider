@@ -106,21 +106,9 @@ mongoexport --db wechat_spider --collection posts --type=csv --fields title,link
 
 如本项目对你有所帮助，可扫码赞赏。
 
-![赞赏](imgs/pay.png)
 
-## 付费 Support
 
-我已经通过此项目累计抓取了 20w+ 多条数据，所以对于碰到不能获取阅读量、不能自动翻页等等问题而邮件我的，我一律不会回复的。代码就在这里，一些配置的问题，如不明白直接看代码，也不要再邮件我。
 
-如果实在不明白，请先扫码赞赏，然后邮件联系我。
-
-如需帮忙搭建抓取环境、更高级的功能定制或帮忙抓取数据等，也可邮件联系，价格都好商量。
-
-邮箱： `974923609@qq.com`。
-
-微信：
-
-![](https://dy6.top/static_files/lq_wechat.png)
 
 ## License
 

@@ -4,7 +4,7 @@
   "description": "wechat spider by Man-in-the-middle attack",
   "main": "index.js",
   "scripts": {
-    "start": "DEBUG=ws:* NODE_ENV=production node index.js",
+    "start": "cross-env DEBUG=ws:* NODE_ENV=production node index.js",
     "dev": "DEBUG=ws:* nodemon index.js --ignore client/ --ignore test/",
     "build": "pm2 start index.js --name=\"wechat_spider\"",
     "mp": "DEBUG=ws:mp* node second/task.js",
@@ -15,6 +15,7 @@
   "dependencies": {
     "anyproxy": "^4.0.5",
     "cheerio": "^1.0.0-rc.2",
+    "cross-env": "^5.2.0",
     "debug": "^4.0.1",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
@@ -35,14 +36,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lqqyt2423/wechat_spider.git"
+    "url": "git+https://github.com/alangong114/wechat_spider"
   },
   "keywords": [
     "wechat",
     "spider"
   ],
   "bugs": {
-    "url": "https://github.com/lqqyt2423/wechat_spider/issues"
+    "url": "https://github.com/alangong114/wechat_spiderissues"
   },
-  "homepage": "https://github.com/lqqyt2423/wechat_spider#readme"
+  "homepage": "https://github.com/alangong114/wechat_spider#readme"
 }

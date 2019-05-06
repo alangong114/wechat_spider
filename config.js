@@ -3,7 +3,6 @@
 const merge = require('./utils/merge');
 
 const config = {
-
   // 接口和前端等可视化相关的端口号
   serverPort: 8104,
 
@@ -31,14 +30,14 @@ const config = {
 
   // mongo 数据库设置
   mongodb: {
-    db: 'mongodb://127.0.0.1:27017/wechat_spider'
+    db: 'mongodb://192.168.0.124:27017/wechat_spider'
   },
 
   // redis 设置
   redis: {
     port: 6379,
-    host: '127.0.0.1',
-
+    // host: '127.0.0.1',
+    host: '192.168.0.124',
     // 存储抓取文章列表的 key 名称
     POST_LIST_KEY: 'wechat_spider:post_list',
     // 存储抓取微信公众号历史列表的 key 名称
@@ -56,8 +55,8 @@ const config = {
       jumpInterval: 2,
 
       // 跳转文章发布时间范围
-      minTime: new Date('2018-1-1'),
-      maxTime: new Date('2018-7-1'),
+      minTime: new Date('2019-1-1'),
+      maxTime: new Date('2019-6-1'),
 
       // 已经抓取过的文章是否需要再次抓取
       isCrawlExist: false,
@@ -74,7 +73,7 @@ const config = {
       // 内容占用很多空间，尤其是html形式
       isSavePostContent: false,
       // 保存内容的形式: html/text
-      saveContentType: 'text',
+      saveContentType: 'text'
     },
 
     // 公众号查看全部历史文章页面相关设置
@@ -88,14 +87,14 @@ const config = {
       // 页面会自动下拉
       // 下拉至此项设置的时间便会停止
       // 然后跳转至下一个公众号历史页面
-      minTime: new Date('2018-1-1'),
+      minTime: new Date('2019-1-1'),
 
       // 控制在此时间后已经抓取过的公众号本次就不用再抓取了
-      maxUpdatedAt: new Date('2018-7-1'),
+      maxUpdatedAt: new Date('2019-6-1'),
 
       // 抓取公众号 biz 范围 [string]
       // 为空表示不限制范围
-      targetBiz: [],
+      targetBiz: []
     },
 
     // 功能：是否抓取评论
@@ -104,12 +103,12 @@ const config = {
     // 优化项：是否替换掉所有的图片请求
     isReplaceImg: false,
     // 优化项：是否替换手机上显示的正文内容
-    isReplacePostBody: false,
+    isReplacePostBody: false
   },
 
   mp: {
     cookie: '',
-    token: '',
+    token: ''
   },
 
   // 添加代理基本认证
@@ -117,9 +116,8 @@ const config = {
   proxyBasicAuth: {
     enable: false,
     user: 'admin',
-    password: '123456',
-  },
-
+    password: '123456'
+  }
 };
 
 // docker 配置
@@ -128,12 +126,11 @@ if (process.env.DEPLOY === 'docker') {
   config.redis.host = 'redis';
 }
 
-
 // 加载自定义的配置
 try {
   const myConfig = require('./my_config.json');
   merge(config, myConfig);
-} catch(e) {
+} catch (e) {
   // console.log(e);
   // Do nothing
 }
